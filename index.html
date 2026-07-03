@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mac Launcher</title>
+<style>
+  :root {
+    --bg: #0d0f14;
+    --panel: rgba(255,255,255,0.04);
+    --panel-border: rgba(255,255,255,0.08);
+    --text: #e8eaed;
+    --muted: #8b909a;
+    --accent: #5b8cff;
+    --accent-soft: rgba(91,140,255,0.14);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+  /* Hero */
+  header {
+    padding: 120px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: "";
+    position: absolute;
+    top: -40%; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, var(--accent-soft) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .logo-dot {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 6px);
+    gap: 5px;
+    padding: 14px;
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 16px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .logo-dot span { width: 6px; height: 6px; border-radius: 50%; background: var(--text); }
+  h1 {
+    font-size: 52px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .tagline {
+    font-size: 20px;
+    color: var(--muted);
+    max-width: 480px;
+    margin: 0 auto 40px;
+    position: relative;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 14px 32px;
+    border-radius: 12px;
+    position: relative;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 8px 24px rgba(91,140,255,0.28);
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(91,140,255,0.4); }
+  .btn-note { display: block; margin-top: 14px; font-size: 13px; color: var(--muted); position: relative; }
+
+  /* Description */
+  section { padding: 56px 0; border-top: 1px solid var(--panel-border); }
+  h2 { font-size: 24px; font-weight: 650; letter-spacing: -0.02em; margin-bottom: 20px; }
+  p { color: var(--muted); margin-bottom: 16px; }
+  p strong { color: var(--text); font-weight: 600; }
+  ul { list-style: none; margin-bottom: 16px; }
+  li { color: var(--muted); padding-left: 22px; position: relative; margin-bottom: 8px; }
+  li::before { content: ""; position: absolute; left: 4px; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+  /* Privacy */
+  #privacy h3 { font-size: 16px; font-weight: 600; color: var(--text); margin: 24px 0 8px; }
+  #privacy p { font-size: 15px; }
+
+  footer {
+    padding: 48px 0 64px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    border-top: 1px solid var(--panel-border);
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  @media (max-width: 600px) {
+    header { padding: 80px 0 56px; }
+    h1 { font-size: 38px; }
+    .tagline { font-size: 18px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo-dot" aria-hidden="true">
+      <span></span><span></span><span></span>
+      <span></span><span></span><span></span>
+      <span></span><span></span><span></span>
+    </div>
+    <h1>Mac Launcher</h1>
+    <p class="tagline">A fast, keyboard-first app launcher for macOS. Search apps and files, do quick math, check your calendar, and more — all from one panel.</p>
+    <a class="btn" href="https://github.com/Ayaansh739/mac-launcher-site/releases/latest">Download for macOS</a>
+    <span class="btn-note">Free and open source · Apple-notarized · Apple Silicon</span>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>What it does</h2>
+    <p>Mac Launcher gives you one place to get things done without lifting your hands off the keyboard. Press a shortcut, start typing, and go.</p>
+    <ul>
+      <li>Search and launch any app on your Mac</li>
+      <li>Find local files and documents instantly</li>
+      <li>Do quick calculations right in the search bar</li>
+      <li>Open websites or search the web</li>
+      <li>See your Google Calendar week and upcoming events at a glance</li>
+      <li>Custom themes, weather, a live clock, and quick power controls</li>
+    </ul>
+  </div>
+</section>
+
+<section id="privacy">
+  <div class="wrap">
+    <h2>Privacy Policy</h2>
+    <p><strong>Last updated: July 3, 2026</strong></p>
+    <p>Mac Launcher is a free, open-source application that runs entirely on your own Mac. This policy explains how the app handles your information.</p>
+
+    <h3>Information the app accesses</h3>
+    <p>If you choose to connect your Google Account, Mac Launcher requests read-only access to your Google Calendar so it can display your upcoming events and weekly schedule inside the app. The app does not request access to Gmail, Drive, or any other Google service.</p>
+
+    <h3>How your information is used</h3>
+    <p>Calendar data is used only to show your events within the app on your device. It is displayed to you and no one else.</p>
+
+    <h3>Data storage and sharing</h3>
+    <p>Mac Launcher does not have any servers. Your Google login token and calendar data stay on your own computer. The app does not collect, transmit, sell, or share your personal data with anyone. Nothing is sent to the developer or any third party.</p>
+
+    <h3>Revoking access</h3>
+    <p>You can disconnect your Google Account at any time from within the app's settings, which deletes the stored login token from your Mac. You can also revoke access directly from your Google Account security settings at myaccount.google.com/permissions.</p>
+
+    <h3>Contact</h3>
+    <p>For questions about this policy, contact the developer through the project's GitHub page.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Mac Launcher · Free &amp; open source · <a href="https://github.com/Ayaansh739/mac-launcher-site">View on GitHub</a>
+  </div>
+</footer>
+
+</body>
+</html>
